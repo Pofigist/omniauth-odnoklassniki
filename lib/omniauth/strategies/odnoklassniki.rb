@@ -64,7 +64,8 @@ module OmniAuth
         @raw_info ||= begin
           params = {
             'method' => 'users.getCurrentUser',
-            'application_key' => options.public_key
+            'application_key' => options.public_key,
+            'fileds' => 'pic_5'
           }
           params['fields'] = options[:info_fields] if options.key?(:info_fields)
           params['sig'] = calculate_signature(params)
