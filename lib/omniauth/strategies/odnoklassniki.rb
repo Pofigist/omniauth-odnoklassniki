@@ -5,7 +5,7 @@ module OmniAuth
 
     class Odnoklassniki < OmniAuth::Strategies::OAuth2
       option :name, 'odnoklassniki'
-      option :info_fields, 'pic_5'
+      option :info_fields, 'pic_5,pic_2,pic_1,gender,age'
 
       option :client_options, {
         :site => 'http://www.odnoklassniki.ru/',
