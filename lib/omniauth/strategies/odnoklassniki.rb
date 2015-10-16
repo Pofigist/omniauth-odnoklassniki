@@ -5,6 +5,7 @@ module OmniAuth
 
     class Odnoklassniki < OmniAuth::Strategies::OAuth2
       option :name, 'odnoklassniki'
+      option :info_fields, [:pic_5]
 
       option :client_options, {
         :site => 'http://www.odnoklassniki.ru/',
@@ -65,7 +66,6 @@ module OmniAuth
           params = {
             'method' => 'users.getCurrentUser',
             'application_key' => options.public_key,
-            'fileds' => 'pic_5'
           }
           params['fields'] = options[:info_fields] if options.key?(:info_fields)
           params['sig'] = calculate_signature(params)
